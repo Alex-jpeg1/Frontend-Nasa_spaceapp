@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Biology Knowledge Engine | NASA Space Apps Challenge</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0B3D91;
+            --secondary: #FC3D21;
+            --accent: #00A9E0;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+
+        header {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .badge {
+            background: var(--secondary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #062E6F 100%);
+            color: var(--white);
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 1rem 3.5rem 1rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 50px;
+            outline: none;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 0.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--secondary);
+            color: var(--white);
+            border: none;
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background: #d43419;
+        }
+
+        main {
+            padding: 3rem 0;
+        }
+
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 2rem;
+            background: var(--secondary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--accent);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background: #008fbf;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent);
+            color: var(--white);
+        }
+
+        footer {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        footer p {
+            opacity: 0.8;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+            padding: 2rem 0;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>🚀 Space Biology Knowledge Engine</h1>
+                <span class="badge">NASA Space Apps 2024</span>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h2>Discover the Biology of Space</h2>
+            <p>Explore cutting-edge research on how organisms adapt, survive, and thrive beyond Earth's atmosphere</p>
+            <div class="search-box">
+                <input type="text" placeholder="Search organisms, experiments, or research topics..." id="searchInput">
+                <button onclick="handleSearch()">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <div class="container">
+            <div class="stats">
+                <div class="stat-item">
+                    <h3>250+</h3>
+                    <p>Research Papers</p>
+                </div>
+                <div class="stat-item">
+                    <h3>85</h3>
+                    <p>Organisms Studied</p>
+                </div>
+                <div class="stat-item">
+                    <h3>150+</h3>
+                    <p>Space Experiments</p>
+                </div>
+            </div>
+
+            <section class="section" id="explore">
+                <h2 class="section-title">Featured Topics</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Microgravity Effects</h3>
+                        <p>Understanding how reduced gravity affects cellular processes, bone density, and muscle mass in living organisms.</p>
+                        <br>
+                        <button class="btn">Learn More</button>
+                    </div>
+                    <div class="card">
+                        <h3>Plant Growth in Space</h3>
+                        <p>Research on cultivating plants in space environments for sustainable food production on long-duration missions.</p>
+                        <br>
+                        <button class="btn">Learn More</button>
+                    </div>
+                    <div class="card">
+                        <h3>Radiation Biology</h3>
+                        <p>Study of cosmic radiation effects on DNA, cellular repair mechanisms, and long-term health implications.</p>
+                        <br>
+                        <button class="btn">Learn More</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section" id="research">
+                <h2 class="section-title">Recent Research</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>ISS Biological Studies</h3>
+                        <p>Latest findings from experiments conducted aboard the International Space Station examining organism adaptation.</p>
+                        <br>
+                        <button class="btn btn-secondary">View Research</button>
+                    </div>
+                    <div class="card">
+                        <h3>Extremophile Analysis</h3>
+                        <p>Investigation of organisms that survive extreme conditions, providing insights for astrobiology.</p>
+                        <br>
+                        <button class="btn btn-secondary">View Research</button>
+                    </div>
+                    <div class="card">
+                        <h3>Human Physiology</h3>
+                        <p>Comprehensive studies on human adaptation to space environments and countermeasures for health issues.</p>
+                        <br>
+                        <button class="btn btn-secondary">View Research</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 NASA Space Apps Challenge | Space Biology Knowledge Engine</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built for exploration and discovery</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleSearch() {
+            const query = document.getElementById('searchInput').value;
+            if (query.trim()) {
+                alert('Search functionality to be implemented for: ' + query);
+                // Add your search logic here
+            }
+        }
+
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleSearch();
+            }
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
