@@ -11,6 +11,8 @@
                     );
 
     }
+    const input = document.getElementById('input');
+
      async function handleInput(value){
         try 
         {
@@ -21,4 +23,9 @@
         {
             console.log("Eroare:", err);
         }
-    }   
+    }
+    function handleClick()
+    {
+        const value = input.value;
+        handleSearch(value); 
+    }
