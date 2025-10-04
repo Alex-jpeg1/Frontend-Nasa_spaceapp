@@ -1,5 +1,6 @@
     async function handleSearch(search) {
 
+        switchDivs("ANDREI");
         const obj = {
             text: search
         };
@@ -9,23 +10,23 @@
                         headers: {"Content-Type": "application/json"},
                         body: JSON.stringify(obj)}
                     );
-
     }
-    const input = document.getElementById('input');
+    
+    const input = document.getElementById('res');
+    document.getElementById("searchBtn").addEventListener("click", handleClick);
 
-     async function handleInput(value){
-        try 
-        {
-            const res = await handleSearch(value);
-            console.log("Raspuns: ", res);
-        }
-        catch(err)
-        {
-            console.log("Eroare:", err);
-        }
-    }
     function handleClick()
     {
         const value = input.value;
         handleSearch(value); 
     }
+    const toHide = document.getElementById('toHide');
+    const toShow = document.getElementById('toShow');
+
+    function switchDivs(value)
+    {
+        toHide.style.display = 'none';
+        toShow.style.display = 'block';
+
+    toShow.textContent = value;
+}
