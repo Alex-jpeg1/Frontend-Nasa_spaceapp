@@ -1,7 +1,7 @@
     async function handleSearch(search) {
 
         const obj = {
-            search_index: search
+            text: search
         };
 
         const res = await fetch("https://localhost:5001/search", {
