@@ -76,15 +76,15 @@
         }
 
         nav .nav-button {
-    padding: 0.5rem 1.5rem;
-    background: white;
-    color: black;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: medium;
-    cursor: pointer;
-    transition: all 0.3s;
+            padding: 0rem 0rem;
+            background: white;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
 }
     
         nav a {
