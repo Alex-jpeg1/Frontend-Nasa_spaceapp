@@ -1,15 +1,23 @@
     async function handleSearch(search) {
 
-        switchDivs("ANDREI");
         const obj = {
             text: search
         };
-
+        
         const res = await fetch("https://localhost:5001/api/search", {
-                        method: "POST",
-                        headers: {"Content-Type": "application/json"},
-                        body: JSON.stringify(obj)}
-                    );
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(obj)}
+        );
+        
+        if(res.ok)
+        {
+            const data = await res.json();
+            const ans = JSON.parse(data);
+            
+            switchDivs();
+            displayInformation(ans);
+        }
     }
 
     const input = document.getElementById('res');
@@ -30,7 +38,12 @@
     {
         toHide.style.display = 'none';
         toShow.style.display = 'block';
-
-        toShow.textContent = value;
     }
+
+    const information = document.getElementById('information');
+
+    function displayInformation(ans)
+    {
+        information.textContent = ans.text;
+    } 
     
