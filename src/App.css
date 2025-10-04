@@ -150,25 +150,29 @@
             margin-bottom: 4rem;
         }
 
+        .section-header{
+
+                display: flex;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+        }
         .section-title {
             font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary);
-            display: flex;
-            text-align: center;
-            gap: 0.5rem;
+            color: var(--primary) !important;
             position: relative;
             display: inline-block;
+            margin-bottom: 1.5rem;
         }
 
-         .section-title::before {
+        
+         .section-header::after {
             position: absolute;
-            bottom: -2px;
+            bottom: 0;
             left:0;
             content: '';
             width: 100%;
-            height: 4px;
-            background: var(--secondary);
+            height: 1px;
+            background: #000;
         }
         .grid {
             display: grid;
