@@ -1,4 +1,7 @@
+import { typeText } from "./utils.js";
+
     async function handleSearch(search) {
+        switchDivs();
 
         const obj = {
             text: search
@@ -14,7 +17,6 @@
         {
             const ans = await res.json();
             
-            switchDivs();
             displayInformation(ans);
         }
     }
@@ -37,16 +39,16 @@
     {
         toHide.style.display = 'none';
         toShow.style.display = 'block';
-    }
 
-    const information = document.getElementById('information');
+        typeText(toShow,20,"ANDREI ARE MERE SI PORTOCALE");
+    }
 
     function displayInformation(ans)
     {
-        information.textContent = ans.text;
+        toShow.textContent = ans.text;
         const titles = ans.most_relevant_title.split('|');
         const links = ans.most_relevant_links.split('|');
 
-        
+
     } 
     
