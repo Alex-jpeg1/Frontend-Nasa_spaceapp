@@ -75,6 +75,18 @@
             padding: 1rem 0;
         }
 
+        nav .nav-button {
+    padding: 0.5rem 1.5rem;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: medium;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+    
         nav a {
             text-decoration: none;
             color: var(--dark);
@@ -159,17 +171,16 @@
         }
         .section-title {
             
-            display: flex;
-            justify-content: center;
             font-size: 1.8rem;
             color: var(--primary) !important;
             position: relative;
-            display: inline-block;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            text-align: center;
         }
 
         
-         .section-header::after {
+         .section-title::after {
             position: absolute;
             bottom: 0;
             left:0;
