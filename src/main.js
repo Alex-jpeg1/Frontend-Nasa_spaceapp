@@ -11,10 +11,13 @@
                         body: JSON.stringify(obj)}
                     );
     }
-    
+
     const input = document.getElementById('res');
     document.getElementById("searchBtn").addEventListener("click", handleClick);
-
+    document.getElementById("homeBtn").addEventListener("click", () => {
+        location.reload();
+    });    
+    
     function handleClick()
     {
         const value = input.value;
@@ -28,5 +31,5 @@
         toHide.style.display = 'none';
         toShow.style.display = 'block';
 
-    toShow.textContent = value;
-}
+        toShow.textContent = value;
+    }
