@@ -1,86 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Space Biology Knowledge Engine | NASA Space Apps Challenge</title>
-    <link rel = "stylesheet" href = "src/App.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Space Biology Knowledge Engine | NASA Space Apps Challenge</title>
+  <link rel="stylesheet" href="src/App.css">
 </head>
+
 <body>
-    <header>
- <!--       <div class="container">
+  <header>
+    <!--       <div class="container">
             <div class="header-content">
                 <h1>Space Biology Knowledge Engine</h1>
             </div>
         </div>-->
-    </header>
+  </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><button class="nav-button" id = "homeBtn">Home</button></li>
-                <li><button class="nav-button">Explore</li>
-                <li><button class="nav-button">About</li>
-            </ul>
-        </div>
-    </nav>
+  <nav>
+    <div class="container">
+      <ul>
+        <li><button class="nav-button" id="homeBtn">Home</button></li>
+        <li><button class="nav-button">Explore</button></li>
+        <li><button class="nav-button">About</button></li>
+      </ul>
+    </div>
+  </nav>
 
-    <section class="hero">
-        <div class="container">
-            <h2>Discover the Biology of Space</h2>
-            <p>Explore scientific researches on how organisms adapt, survive, and thrive beyond Earth's atmosphere</p>
-            <div class="search-box">
-                <input type="text" placeholder="Search organisms, experiments, or research topics..." id="res">
-                <button id = "searchBtn">Search</button>
-            </div>
-        </div>
-    </section>
+  <section class="hero">
+    <div class="container">
+      <h2>Discover the Biology of Space</h2>
+      <p>Explore scientific researches on how organisms adapt, survive, and thrive beyond Earth's atmosphere</p>
+      <div class="search-box">
+        <input type="text" placeholder="Search organisms, experiments, or research topics..." id="res">
+        <button id="searchBtn">Search</button>
+      </div>
+    </div>
+  </section>
 
-    <div id = "toHide">
+  <div id="toHide">
     <main>
-        <div class="container">
-            <div class="stats">
-                <div class="stat-item">
-                    <h3 id = "research"></h3>
-                    <p>Research Papers</p>
-                </div>
-                <div class="stat-item">
-                    <h3 id = "organisms"></h3>
-                    <p>Organisms Studied</p>
-                </div>
-                <div class="stat-item">
-                    <h3 id = "space"></h3>
-                    <p>Space Experiments</p>
-                </div>
+      <div class="container">
+        <div class="stats">
+          <div class="stat-item">
+            <h3 id="research"></h3>
+            <p>Research Papers</p>
+          </div>
+          <div class="stat-item">
+            <h3 id="organisms"></h3>
+            <p>Organisms Studied</p>
+          </div>
+          <div class="stat-item">
+            <h3 id="space"></h3>
+            <p>Space Experiments</p>
+          </div>
+        </div>
+
+        <section class="section" id="explore">
+
+          <h2 class="section-title">Featured Topics</h2>
+
+          <div class="grid">
+            <div class="card">
+              <h3>Microgravity Effects</h3>
+              <p>Understanding how reduced gravity affects cellular processes, bone density, and muscle mass in living
+                organisms.</p>
+              <br>
+              <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11988870/" target="blank"><button class="btn">Learn
+                  More</button></a>
             </div>
+            <div class="card">
+              <h3>Plant growth strategies</h3>
+              <p>Research on cultivating plants in space environments for sustainable food production on long-duration
+                missions.</p>
+              <br>
+              <a=href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11869762/" target="blank"><button class="btn">Learn
+                  More</button></a>
+            </div>
+            <div class="card">
+              <h3>Radiation Biology</h3>
+              <p>Study of cosmic radiation effects on DNA, cellular repair mechanisms, and long-term health
+                implications.</p>
+              <br>
+              <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213004/" target="blank"><button class="btn">Learn
+                  More</button></a>
+            </div>
+          </div>
+        </section>
 
-            <section class="section" id="explore">
-               
-                <h2 class="section-title">Featured Topics</h2>
-
-                <div class="grid">
-                    <div class="card">
-                        <h3>Microgravity Effects</h3>
-                        <p>Understanding how reduced gravity affects cellular processes, bone density, and muscle mass in living organisms.</p>
-                        <br>
-                    <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11988870/" target = "blank"><button class="btn">Learn More</button></a>
-                    </div>
-                    <div class="card">
-                        <h3>Plant growth strategies</h3>
-                        <p>Research on cultivating plants in space environments for sustainable food production on long-duration missions.</p>
-                        <br>
-                        <a = href = "https://pmc.ncbi.nlm.nih.gov/articles/PMC11869762/" target = "blank"><button class="btn">Learn More</button></a>
-                    </div>
-                    <div class="card">
-                        <h3>Radiation Biology</h3>
-                        <p>Study of cosmic radiation effects on DNA, cellular repair mechanisms, and long-term health implications.</p>
-                        <br>
-                    <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6213004/" target = "blank"><button class="btn">Learn More</button></a>
-                    </div>
-                </div>
-            </section>
-
-            <!--<section class="section" id="research">
+        <!--<section class="section" id="research">
                 <h2 class="section-title">Recent Research</h2>
                 <div class="grid">
                     <div class="card">
@@ -103,19 +111,20 @@
                     </div>
                 </div>
             </section>-->
-        </div>
+      </div>
     </main>
+  </div>
+  <div id="toShow">
+  </div>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 NASA Space Apps Challenge | Space Biology Knowledge Engine</p>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built for exploration and discovery</p>
     </div>
-    <div id ="toShow">
-    </div>
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 NASA Space Apps Challenge | Space Biology Knowledge Engine</p>
-            <p style="margin-top: 0.5rem; font-size: 0.9rem;">Built for exploration and discovery</p>
-        </div>
-    </footer>
+  </footer>
 
-    <script src="src/main.js"></script>
-    <script src="src/counters.js"></script>
+  <script src="src/main.js"></script>
+  <script src="src/counters.js"></script>
 </body>
+
 </html>
