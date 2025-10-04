@@ -30,12 +30,13 @@
             <h2>Discover the Biology of Space</h2>
             <p>Explore scientific researches on how organisms adapt, survive, and thrive beyond Earth's atmosphere</p>
             <div class="search-box">
-                <input type="text" placeholder="Search organisms, experiments, or research topics..." id="input">
-                <button onclick="handleClick()">Search</button>
+                <input type="text" placeholder="Search organisms, experiments, or research topics..." id="res">
+                <button id = "searchBtn">Search</button>
             </div>
         </div>
     </section>
 
+    <div id = "toHide">
     <main>
         <div class="container">
             <div class="stats">
@@ -60,7 +61,7 @@
                         <h3>Microgravity Effects</h3>
                         <p>Understanding how reduced gravity affects cellular processes, bone density, and muscle mass in living organisms.</p>
                         <br>
-                                                <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11988870/" target = "blank"><button class="btn">Learn More</button></a>
+                    <a href = "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11988870/" target = "blank"><button class="btn">Learn More</button></a>
                     </div>
                     <div class="card">
                         <h3>Plant growth strategies</h3>
@@ -102,7 +103,9 @@
             </section>-->
         </div>
     </main>
-
+    </div>
+    <div id ="toShow">
+    </div>
     <footer>
         <div class="container">
             <p>&copy; 2025 NASA Space Apps Challenge | Space Biology Knowledge Engine</p>
