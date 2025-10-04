@@ -5,9 +5,9 @@
         }
 
         :root {
-            --primary: #0B3D91;
-            --secondary: #FC3D21;
-            --accent: #00A9E0;
+            --primary: #062e6f;
+            --secondary: #fc3d21;
+            --accent: #062e6f;
             --dark: #1a1a1a;
             --light: #f5f5f5;
             --white: #ffffff;
@@ -153,13 +153,13 @@
             gap: 0.5rem;
         }
 
-        .section-title::before {
+        /* .section-title::before {
             content: '';
             width: 4px;
             height: 2rem;
             background: var(--secondary);
         }
-
+ */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -205,7 +205,7 @@
         }
 
         .btn:hover {
-            background: #008fbf;
+            background: #0c45a1;
         }
 
         .btn-secondary {
