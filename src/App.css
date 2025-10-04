@@ -157,7 +157,7 @@
 
          .section-title::before {
             position: absolute;
-            bottom: -10px;
+            bottom: -2px;
             left:0;
             content: '';
             width: 100%;
