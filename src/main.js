@@ -12,8 +12,7 @@
         
         if(res.ok)
         {
-            const data = await res.json();
-            const ans = JSON.parse(data);
+            const ans = await res.json();
             
             switchDivs();
             displayInformation(ans);
@@ -34,7 +33,7 @@
     const toHide = document.getElementById('toHide');
     const toShow = document.getElementById('toShow');
 
-    function switchDivs(value)
+    function switchDivs()
     {
         toHide.style.display = 'none';
         toShow.style.display = 'block';
@@ -45,5 +44,9 @@
     function displayInformation(ans)
     {
         information.textContent = ans.text;
+        const titles = ans.most_relevant_title.split('|');
+        const links = ans.most_relevant_links.split('|');
+
+        
     } 
     
