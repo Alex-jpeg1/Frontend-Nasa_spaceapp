@@ -3,6 +3,7 @@
     background-color: #000000; 
     border-radius: 10px;
     padding: 5px;
+    flex: 1;
 }
 .aiText
 {

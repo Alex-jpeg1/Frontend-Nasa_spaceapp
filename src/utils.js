@@ -24,6 +24,20 @@ export function displayInformation(ans, currId)
     divText.appendChild(aiText);
     currId.appendChild(divText);
 
-    typeText(aiText, 20, "Banane");
+    typeText(aiText, 20, text);
+
+    titles.forEach((title,idx) => {
+        const p = document.createElement('p');
+        p.classList.add('LinkBox');
+
+        const a = document.createElement('a');
+        a.href = links[idx];
+
+        typeText(a, 20, title);
+        a.target = '_blank'; 
+
+        p.appendChild(a);
+        divText.appendChild(p);
+    });
 }
 
