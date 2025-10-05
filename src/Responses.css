@@ -1,0 +1,12 @@
+.ResponseBox
+{
+    background-color: #000000; 
+    border-radius: 10px;
+    padding: 5px;
+}
+.aiText
+{
+    color:#ffffff;
+    font-style: normal;
+    padding-bottom: 10px;
+}
