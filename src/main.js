@@ -17,6 +17,11 @@ import { displayInformation} from "./utils.js";
             switchDivs();
             displayInformation(ans, toShow);
         }
+        else 
+        {
+            throw new Error("Eroare server: ${res.status}");
+            
+        }
     }
 
     const input = document.getElementById('res');
